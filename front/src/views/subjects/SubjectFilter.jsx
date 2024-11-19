@@ -112,7 +112,7 @@ const SubjectFilter = () => {
                 </div>
                 <button type="submit">Buscar</button>
             </form>
-            <div className="card-container d-flex flex-wrap">
+            <div className="card-container d-flex justify-content-center flex-wrap">
             {hasSearched && (
                 Array.isArray(students) && students.length > 0 ? (
                         students.map((student) => (
