@@ -1,0 +1,5 @@
+PORT=3000
+# URI_DB=mongodb://localhost:27017/parcial-1 #para conectarme solo de manera local
+# URI_DB=mongodb+srv://federicoiuliano:ckTbaEVpywbY5XTN@cluster0.kvo7c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+URI_DB=mongodb+srv://federicoiuliano:ckTbaEVpywbY5XTN@cluster0.kvo7c.mongodb.net/parcial-2-BD?
+SECRETKEY=clavesecreta
