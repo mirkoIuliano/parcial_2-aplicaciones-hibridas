@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST de Alumnos y su Materias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center mb-5 bg-secondary p-5">API REST de Escuela</h1>
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-12 p-0">
+
+                <!-- tabla de usuarios -->
+                <div class="border-bottom border-black pb-3  mb-5">
+                    <table class="table table-light table-hover w-100 mb-4">
+                        <h2 class="text-center mb-5">Rutas para usar el CRUD de Usuarios</h2>
+                        <thead>
+                            <tr>
+                                <th scope="col text-wrap" class="align-middle text-center" style="width: 15%;">Método</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 50%;">Función</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 35%;">URL</th>
+                            </tr>
+                        </thead>
+                        
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver todos los usuarios</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver un usuario especifico <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del usuario que se desea buscar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-warning">POST</td>
+                            <td class="align-middle">Para crear un usuario</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-primary">PUT</td>
+                            <td class="align-middle">Para modificar un usuario existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del usuario que se desea modificar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-danger">DELETE</td>
+                            <td class="align-middle">Para modificar un usuario existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del usuario que se desea borrar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-warning">POST</td>
+                            <td class="align-middle">Para iniciar sesión <br> <span class="fw-semibold text-body-secondary">Requiere email y password</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/usuarios/iniciar-sesion</td>
+                        </tr>
+                    </table>
+                    <div class="mt-4">
+                        <h3>Notas adicionales</h3>
+                        <p>Los parámetros del modelo User son: <span class="fw-semibold">name, email y password</span></p>
+                        <p>Ejemplo de objeto JSON:</p>
+                        <div class="w-50 m-auto">
+                            <p class="fw-medium">
+                                { <br>
+                                    "name": "Nombre de usuario",  <span class="fw-semibold text-success">// Mínimo 3 caracteres</span> <br>
+                                    "email": "test@gmail.com", <span class="fw-semibold text-success">// No se puede poner un email que ya está en uso</span> <br>
+                                    "password": "contraseña" <span class="fw-semibold text-success">// Mínimo 8 caracteres</span> <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tabla de alumnos -->
+                <div class="border-bottom border-black pb-3  mb-5">
+                    <table class="table table-light table-hover w-100 mb-4">
+                        <h2 class="text-center mb-5">Rutas para usar el CRUD de Alumnos</h2>
+                        <thead>
+                            <tr>
+                                <th scope="col text-wrap" class="align-middle text-center" style="width: 15%;">Método</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 50%;">Función</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 35%;">URL</th>
+                            </tr>
+                        </thead>
+                        
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver todos los alumnos</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver un alumno especifico <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del alumno que se desea buscar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-warning">POST</td>
+                            <td class="align-middle">Para crear un alumno</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-primary">PUT</td>
+                            <td class="align-middle">Para modificar un alumno existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del alumno que se desea modificar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-danger">DELETE</td>
+                            <td class="align-middle">Para modificar un alumno existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del alumno que se desea borrar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver un alumno especifico mediante su nombre <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el nombre del alumno que se desea buscar, teniendo en cuenta mayúsculas y minúsculas</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos/buscar/:name</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle"> <h3 class="h4 text-primary-emphasis">Filtro</h3>Filtra por año y muestra todos los alumnos que pertenecen a ese año <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el año de cursada que se desea filtrar (de primer a sexto año)</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/alumnos/año/:school_year</td>
+                        </tr>
+
+                    </table>
+
+                    <div class="mt-4">
+                        <h3>Notas adicionales</h3>
+                        <p>Los parámetros del modelo Student son: <span class="fw-semibold">name, last_name, school_year y birthdate</span></p>
+                        <p>Ejemplo de objeto JSON:</p>
+                        <div class="w-50 m-auto">
+                            <p class="fw-medium">
+                                { <br>
+                                    "name": "Nombre de alumno",  <span class="fw-semibold text-success">// Mínimo 2 caracteres</span> <br>
+                                    "last_name": "Apellido de alumno", <span class="fw-semibold text-success">// Mínimo 2 caracteres </span> <br>
+                                    "school_year": 1, <span class="fw-semibold text-success">// Se escribe con número y va del 1 al 6 (primer año a sexto año) </span> <br>
+                                    "birthdate": "2000-12-31" <span class="fw-semibold text-success">// El formato es: YYYY-MM-DD</span> <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- tabla de materias -->
+                <div class="border-bottom border-black pb-3  mb-5">
+                    <table class="table table-light table-hover w-100 mb-4">
+                        <h2 class="text-center mb-5">Rutas para usar el CRUD de Materias</h2>
+                        <thead>
+                            <tr>
+                                <th scope="col text-wrap" class="align-middle text-center" style="width: 15%;">Método</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 50%;">Función</th>
+                                <th scope="col text-wrap" class="align-middle" style="width: 35%;">URL</th>
+                            </tr>
+                        </thead>
+                        
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver todos los materias</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle">Ver las materias que tiene un alumno <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id del alumno</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-warning">POST</td>
+                            <td class="align-middle">Para crear una materia</td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-primary">PUT</td>
+                            <td class="align-middle">Para modificar una materia existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id de la materia que se desea modificar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-danger">DELETE</td>
+                            <td class="align-middle">Para modificar una materia existente <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro el id de la materia que se desea borrar</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias/:id</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle text-center fw-bold text-success">GET</td>
+                            <td class="align-middle"> <h3 class="h4 text-primary-emphasis">Filtro</h3>
+                                Filtra por materia y muestra todos los alumnos que están en esa materia <br> <span class="fw-semibold text-body-secondary">Es necesario poner como parámetro la materia que se desea filtrar (con mayúsculas, minúsuclas y acentos)</span></td>
+                            <td class="align-middle fw-bold">http://127.0.0.1:3000/api/materias/materia/:subject</td>
+                        </tr>
+
+                    </table>
+
+                    <div class="mt-4">
+                        <h3>Notas adicionales</h3>
+                        <p>Los parámetros del modelo Subject son: <span class="fw-semibold">name y studentId</span></p>
+                        <p>Ejemplo de objeto JSON:</p>
+                        <div class="w-50 m-auto">
+                            <p class="fw-medium">
+                                { <br>
+                                    "name": "Nombre de la materia", <br>
+                                    "studentId": "670ae395f783cfbf29096fb3" <span class="fw-semibold text-success">// Aquí iría el ID del alumno al cual se está haciendo referencia </span> <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container-fluid bg-dark">
+            <p class="text-light p-5 align-middle text-center m-0">Mirko Federico Iuliano - Aplicaciones Híbridas - Jonathan Cruz - DWM4AP</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
