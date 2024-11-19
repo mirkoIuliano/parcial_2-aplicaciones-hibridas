@@ -1,0 +1,109 @@
+/* NotFound404.css */
+.not-found {
+    text-align: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found h1 {
+    font-size: 6rem;
+    color: #ff6347;
+}
+
+.not-found p {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.not-found a {
+    text-decoration: none;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.not-found a:hover {
+    color: #ff4500;
+}
+
+
+/*---------- Estilos para el navbar ----------*/
+
+.enlaveNav:hover {
+    color: black;
+}
+
+/* estilos para cuando el link de navLink esté activo */
+.activo {
+    font-weight: bold;
+}
+
+
+/* Contenedor del formulario */
+.card {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Espaciado en el formulario */
+.divForm {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Etiquetas */
+.divForm label {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Inputs */
+.divForm input[type="text"],
+.divForm input[type="password"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto en inputs al pasar el cursor o enfocarlos */
+.divForm input[type="text"]:focus,
+.divForm input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botón de envío */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
