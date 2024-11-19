@@ -39,9 +39,12 @@ const EditStudentForm = () => {
             // const birthdate = new Date(data.alumno.birthdate).toISOString().split('T')[0]; // Convierte la fecha a UTC
             // const birthdate = formatoDate(data.alumno.birthdate);
             const birthdate = new Date(data.alumno.birthdate);
-            const localDate = new Date(birthdate.getTime() - birthdate.getTimezoneOffset() * 60000)
+            const localDate = new Date(birthdate.getTime())
             .toISOString()
             .split('T')[0];
+            // const localDate = new Date(birthdate.getTime() - birthdate.getTimezoneOffset() * 60000)
+            // .toISOString()
+            // .split('T')[0];
 
             setFormData({ name: data.alumno.name, last_name: data.alumno.last_name, school_year: data.alumno.school_year, birthdate: localDate })
             setLoading(false)

@@ -82,12 +82,14 @@ const SerachByName = () => {
     };
 
     // Convertimos la fecha de nacimiento en un formato legible
-    const birthdate = new Date(student.birthdate).toLocaleDateString('es-AR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    })
-
+    // const birthdate = new Date(student.birthdate).toLocaleDateString('es-AR', {
+    //     day: '2-digit',
+    //     month: '2-digit',
+    //     year: 'numeric'
+    // })
+    const formatBirthdate = (birthdate) => { 
+        return new Date(birthdate).toISOString().split('T')[0];
+    }
 
     return (
         <div>
@@ -110,7 +112,7 @@ const SerachByName = () => {
                                 <h5 className="card-title">{student.name} {student.last_name}</h5>
                                 <h6 className="card-subtitle mb-2 text-body-secondary">{student._id}</h6>
                                 <h6 className="card-subtitle mb-2"> Año de cursada: {student.school_year}</h6>
-                                <h6 className="card-subtitle mb-2"> Fecha de nacimiento: {birthdate}</h6>
+                                <h6 className="card-subtitle mb-2"> Fecha de nacimiento: {formatBirthdate(student.birthdate)}</h6>
                                 <h6 className="card-subtitle mb-2">Fecha de creación: {formatDate(student.createdAt)}</h6>
                             </div>
                         </div>

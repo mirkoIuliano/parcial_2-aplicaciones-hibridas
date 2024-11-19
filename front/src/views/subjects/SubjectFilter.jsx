@@ -87,12 +87,15 @@ const SubjectFilter = () => {
     };
 
     // Convertimos la fecha de nacimiento en un formato legible
+    // const formatBirthdate = (birthdate) => { 
+    //     return new Date(birthdate).toLocaleDateString('es-AR', {
+    //         day: '2-digit',
+    //         month: '2-digit',
+    //         year: 'numeric'
+    //     })
+    // }
     const formatBirthdate = (birthdate) => { 
-        return new Date(birthdate).toLocaleDateString('es-AR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        })
+        return new Date(birthdate).toISOString().split('T')[0];
     }
 
 
